@@ -20,6 +20,10 @@ RUN echo "ubuntu:ubuntu" | chpasswd
 RUN apt install locales locales-all
 RUN export LANG=en_US.UTF-8
 
+# install python3
+RUN apt install python3 python3-pip -y
+RUN pip3 install ipython
+
 # swich user ubuntu
 USER ubuntu
 WORKDIR /home/ubuntu/
@@ -27,15 +31,13 @@ WORKDIR /home/ubuntu/
 # copy all files at Dockerfile level (.) to ubuntu home directory (./)
 ADD . ./
 
-# install python deeep learning libraries
-RUN apt install python3 python3-pip -y
-
-RUN pip3 install ipython
-
 # jupyter font setting
 RUN mkdir .jupyter
 RUN mkdir .jupyter/custom
 RUN echo ".CodeMirror pre, .output pre { font-family: Ricty; font-size: 12pt; }" > .jupyter/custom/custom.css
+
+# machine learning libraries
+RUN pip3 install pandas numpy scipy sklearn tqdm
 
 # keras
 RUN pip3 install keras tensorflow-gpu

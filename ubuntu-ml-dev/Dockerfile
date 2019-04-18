@@ -38,7 +38,7 @@ RUN mkdir .jupyter/custom
 RUN echo ".CodeMirror pre, .output pre { font-family: Ricty; font-size: 12pt; }" > .jupyter/custom/custom.css
 
 # machine learning libraries
-RUN pip3 install pandas scipy numpy sklearn tqdm
+RUN pip3 install pandas numpy scipy sklearn tqdm
 
 # keras
 RUN pip3 install keras tensorflow
