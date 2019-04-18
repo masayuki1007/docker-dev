@@ -1,6 +1,6 @@
 # base OS image
 FROM nvidia/cuda:9.0-cudnn7-devel-ubuntu16.04
-LABEL maintainer="ubuntu-ml-dev"
+LABEL maintainer="nvidia-ubuntu-ml-dev"
 
 # update
 RUN apt update
@@ -29,10 +29,8 @@ ADD . ./
 
 # install python deeep learning libraries
 RUN apt install python3 python3-pip -y
-RUN apt install python python-pip -y
 
 RUN pip3 install ipython
-RUN pip install ipython
 
 # jupyter font setting
 RUN mkdir .jupyter

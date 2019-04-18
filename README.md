@@ -26,7 +26,7 @@ Build and Run docker/nvidia-docker scripts, deeplearning using GPUs.
 ## 作業中のcontainerをimageに固める
 1. container内
 ```
-Ctrl-p+Ctrl-qでcontainerをデタッチ
+Ctrl-p+Ctrl-q → detach container
 ```
 2. ホスト環境のコマンドライン
 ```
